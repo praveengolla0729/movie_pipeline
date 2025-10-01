@@ -1,0 +1,4 @@
+[
+  {"title": "Movie A", "year": 2000, "genres": ["Action"]},
+  {"title": "Movie B", "year": 2001, "genres": "[\"Action\", \"Drama\"]"}
+]

@@ -1,3 +1,28 @@
+# Movie Pipeline
+
+Small ETL + analytics pipeline for movie data.
+
+Structure
+
+- `dags/`: Airflow DAGs and helper modules (usable directly for local testing).
+- `scripts/`: helpers for running and cleaning the repo.
+- `tests/`: unit tests for analysis code.
+
+Quick commands
+
+Run tests:
+
+```powershell
+python -m pytest -q
+```
+
+Clean generated files:
+
+```powershell
+python .\scripts\clean_repo.py --remove-minio-analysis
+```
+
+See `RUN_LOCAL.md` for local-run instructions.
 \# Movie Data Pipeline
 
 

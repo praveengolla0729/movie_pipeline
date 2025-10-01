@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+logs/
+minio_data/.minio.sys/
+minio_data/*/.meta
+*.log
+/*.egg-info/
+.DS_Store
