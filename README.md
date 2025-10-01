@@ -32,6 +32,34 @@ License
 --
 This project is available under the MIT License (see `LICENSE`).
 
+Quickstart
+--
+1. Clone the repo and start local services (Docker Compose):
+
+```powershell
+docker compose up -d postgres minio
+```
+
+2. Run the lightweight local runner (no Airflow required):
+
+```powershell
+python .\scripts\run_local_pipeline.py
+```
+
+3. Inspect outputs:
+- MinIO mirror (local): `minio_data/movie-bucket/analysis/latest.json`
+- Local sample tests: `python -m pytest -q`
+
+Architecture (ASCII)
+--
+	[extract] -> [upload to MinIO] -> [load to Postgres] -> [analysis tasks] -> [analytics stored in MinIO & Postgres]
+
+Notes
+--
+- DAGs are under `dags/` — compute helpers are factored into `dags/analysis.py` so they can be run and tested without Airflow installed.
+- For presentation, run `python .\scripts\clean_repo.py` to remove logs and caches.
+
+
 \# Movie Data Pipeline
 
 
